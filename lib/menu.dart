@@ -42,7 +42,9 @@ class Menu extends StatelessWidget {
               ListTile(
                 leading: Icon(Icons.voice_chat),
                 title: Text('Vocal  Assistant(LLM)')),
-              ListTile(title: Text('RAG')),
+              ListTile(
+                leading: Icon(Icons.image),
+                title: Text('RAG')),
         ],
       ),
     );
