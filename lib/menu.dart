@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/voice_assistant.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Drawer(
+    return Drawer(
       child: Column(
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
                 Color.fromARGB(255, 255, 147, 147),
@@ -25,7 +26,7 @@ class Menu extends StatelessWidget {
               Text('Name/Email'),
             ],
           )),
-          ExpansionTile(
+          const ExpansionTile(
             subtitle: Text('Fashion Mnist Classification'),
             childrenPadding: EdgeInsets.only(left: 20.0),
             title: Text('Image Classification Model'),
@@ -37,12 +38,17 @@ class Menu extends StatelessWidget {
           ],
           ),
               ListTile(
-                leading: Icon(Icons.money),
-                title: Text('Stock Price Prediction'),),
-              ListTile(
-                leading: Icon(Icons.voice_chat),
-                title: Text('Vocal  Assistant(LLM)')),
-              ListTile(
+                leading: const Icon(Icons.money),
+                title: const Text('Stock Price Prediction'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => VoiceAssistant()),
+                  );
+                }
+                ,),
+
+              const ListTile(
                 leading: Icon(Icons.image),
                 title: Text('RAG')),
         ],
